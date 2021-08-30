@@ -10,6 +10,11 @@ public class LiquidStorageManager : MonoBehaviour
     HashSet<LiquidStorage> m_activeLiquidStorages = new HashSet<LiquidStorage>();
     HashSet<LiquidInfuser> m_activeLiquidInfusers = new HashSet<LiquidInfuser>();
 
+    public static LiquidCategory WaterCategoryDefinition = null;
+    public static LiquidCategory OilCategoryDefinition = null;
+    public static LiquidCategory MercuryCategoryDefinition = null;
+    public static LiquidCategory MagmaCategoryDefinition = null;
+
     public void EnableClasses(LiquidCategory wCategory, LiquidCategory oCategory, LiquidCategory meCategory, LiquidCategory maCategory)
     {
         if (!dEnabled)
@@ -34,6 +39,26 @@ public class LiquidStorageManager : MonoBehaviour
                 m_storages.Add(maCategory, new HashSet<LiquidStorage>());
             }
             dEnabled = true;
+        }
+
+        if(WaterCategoryDefinition == null) 
+        {
+            WaterCategoryDefinition = wCategory;
+        }
+
+        if (OilCategoryDefinition == null)
+        {
+            OilCategoryDefinition = oCategory;
+        }
+
+        if (MercuryCategoryDefinition == null)
+        {
+            MercuryCategoryDefinition = meCategory;
+        }
+
+        if (MagmaCategoryDefinition == null)
+        {
+            MagmaCategoryDefinition = maCategory;
         }
     }
 
