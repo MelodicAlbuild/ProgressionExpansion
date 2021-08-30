@@ -517,6 +517,7 @@ public abstract class LiquidProducer : NetworkBehaviour
             if (TrySyncInputs())
             {
                 if(FluidSystem.LiquidStorageManagerRef.GetLiquidValue(ActiveRecipe.Liquids[0].Item.Category) >= ActiveRecipe.Liquids[0].Amount) {
+                    FluidSystem.LiquidStorageManagerRef.RemoveLiquid(ActiveRecipe.Liquids[0].Item, ActiveRecipe.Liquids[0].Amount);
                     // Inputs loaded
                     m_progress = MinProgress;
                 }
