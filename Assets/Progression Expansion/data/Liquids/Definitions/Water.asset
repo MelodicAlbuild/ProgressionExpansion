@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2057e45d4946b47a0db060c631dbb7, type: 3}
+  m_Name: Water
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3171138126
+    Value1: 1329995462
+    Value2: 299145110
+    Value3: 1709399479
+  m_name:
+    m_id: liquid.Water.name
+    m_text: Water
+    m_comment: Liquid name - Water
+  m_description:
+    m_id: liquid.Water.description
+    m_text: Most Basic Fluid Definition
+    m_comment: Liquid description - Water
+  Category: {fileID: 11400000, guid: b06d4df39e9e6cd4ab355abe14b5436d, type: 2}
+  Stats:
+    m_properties: []

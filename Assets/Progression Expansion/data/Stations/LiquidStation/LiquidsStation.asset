@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: LiquidsStation
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2744619449
+    Value1: 1191134259
+    Value2: 1687285950
+    Value3: 937447027
+  m_name:
+    m_id: item.LiquidsStation.name
+    m_text: Liquid Storage Station
+    m_comment: Item name - LiquidsStation
+  m_description:
+    m_id: item.LiquidsStation.description
+    m_text: The Station for Viewing the Storage of your Liquid Modules
+    m_comment: Item description - LiquidsStation
+  Category: {fileID: 11400000, guid: f15f4bd8bedbb16489c86b42e6481595, type: 2}
+  Prefabs:
+  - {fileID: 5279804238008100318, guid: 956c54b8e7798614a84129078045a118, type: 3}
+  Icon: {fileID: 0}
+  MaxStack: 1
+  HelpPageId: 0
+  Stats:
+    m_properties: []

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b18806b9b9439084d9c3502c34499c27
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - waterCategory: {fileID: 11400000, guid: b06d4df39e9e6cd4ab355abe14b5436d, type: 2}
+  - oilCategory: {fileID: 11400000, guid: 06af43d269590474588712c6c3e27b7b, type: 2}
+  - mercuryCategory: {fileID: 11400000, guid: a29c87715d426aa4dbf4c9eeb4737319, type: 2}
+  - magmaCategory: {fileID: 11400000, guid: f7511b98efcbc9f4c8b30af93b0e35e3, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

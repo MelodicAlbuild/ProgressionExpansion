@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: LiquidExtractorT3
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3668931977
+    Value1: 1154343467
+    Value2: 226680994
+    Value3: 86598036
+  Inputs:
+  - Item: {fileID: 11400000, guid: f878209ee44486c4faaf53d535e39ffc, type: 2}
+    Amount: 10
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 53a8f946b466b9e4d90b2544569ba062, type: 2}
+    Amount: 10
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: b3a0b7be95f2ec146a98f25dd98e7f98, type: 2}
+    Amount: 20
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 7b787b3ea7655a743b7c35b8557c7628, type: 2}
+    Amount: 7
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: e71aa3134946a4047af3cc7f3c91ace3, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 56e4fa4a105ac1245806bf759ecc2435, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 0ab62bbf78086bc42be0e21b0b0a6f67, type: 2}
+  ProductionTime: 160

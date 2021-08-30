@@ -1,0 +1,20 @@
+{
+    "name": "com.melodicalbuild.ProgressionExpansion",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0282daa1f46bb2c4ab6f6b3e294c3cf5",
+        "GUID:a44f47cf3ada4435dbc516bad0bc86fe",
+        "GUID:6891c60243d3bfd4a88ba48ef7d34271",
+        "GUID:d142cf608e6211c4ab705f11cc06dea4",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
