@@ -1,0 +1,28 @@
+{
+    "MonoBehaviour": {
+        "m_Enabled": true,
+        "m_EditorHideFlags": 0,
+        "m_Name": "",
+        "m_EditorClassIdentifier": "",
+        "TimeLogging": false,
+        "ValidatePrototypeLabels": false,
+        "PrototypeLabels": [
+            "SkipValidation"
+        ],
+        "ValidatePrototypeFolders": false,
+        "PrototypeFolders": [
+            {
+                "fileID": 102900000,
+                "guid": "94b669bda170d8249b13a1e37686f5f6",
+                "type": 3
+            }
+        ],
+        "BuildAssets": [
+            {
+                "fileID": -5475051401550479605,
+                "guid": "5a7259e447e2c8b459aeefc5b33396ad",
+                "type": 3
+            }
+        ]
+    }
+}
