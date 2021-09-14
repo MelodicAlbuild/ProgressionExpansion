@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using HarmonyLib;
 using UnityEngine;
 
-public class ProgressionExpansion : GameMod
-{
-    public GameObject Helper;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Started");
-    }
+public class ProgressionExpansion : GameMod {
+    public override void Load() {
+        base.Load();
 
-    public override void OnGameLoaded()
-    {
-        base.OnGameLoaded();
-        //Helper = MissionFailed.Object();
-        //Object.Instantiate(Helper);
+        var log     = new StringWriter();
+        var modName = nameof(ProgressionExpansion);
+
+        log.Write($"{modName} loading.");
+
+        var harmony = new Harmony(GUID.Create().ToString());
+        harmony.PatchAll(GetType().Assembly);
+
+        var i = 0;
+        foreach (var patchedMethod in harmony.GetPatchedMethods()) {
+            log.Write($"\r\nPatched: {patchedMethod.DeclaringType?.FullName}:{patchedMethod}");
+            i++;
+        }
+        log.Write($"\r\nPatched {i} methods.");
+        log.Write($"\r\n{modName} loaded.");
+        Debug.Log(log.ToString());
     }
 }

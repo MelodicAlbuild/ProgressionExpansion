@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2057e45d4946b47a0db060c631dbb7, type: 3}
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
   m_assetId:
@@ -26,5 +26,9 @@ MonoBehaviour:
     m_text: Most Basic Fluid Definition
     m_comment: Liquid description - Water
   Category: {fileID: 11400000, guid: b06d4df39e9e6cd4ab355abe14b5436d, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 1
+  HelpPageId: 
   Stats:
     m_properties: []

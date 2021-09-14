@@ -11,10 +11,10 @@ public class ValueManager : MonoBehaviour
     public TextMeshProUGUI m_MercuryValue;
     public TextMeshProUGUI m_MagmaValue;
 
-    public LiquidCategory waterCategory;
-    public LiquidCategory oilCategory;
-    public LiquidCategory mercuryCategory;
-    public LiquidCategory magmaCategory;
+    public ItemCategory waterCategory;
+    public ItemCategory oilCategory;
+    public ItemCategory mercuryCategory;
+    public ItemCategory magmaCategory;
 
     private float waterValue = 0f;
     private float oilValue = 0f;

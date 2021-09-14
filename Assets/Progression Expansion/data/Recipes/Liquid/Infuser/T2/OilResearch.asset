@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c6b6ebe44931e4697c6f87b2cfef50, type: 3}
+  m_Name: OilResearch
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3814491809
+    Value1: 1231626220
+    Value2: 2118924211
+    Value3: 2637864367
+  Inputs:
+  - Item: {fileID: 11400000, guid: 272d8bc0a4ea1ba4c825db30b840a677, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 0376b63b12e60c847989caa1e18f791f, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 1d8b94a75d3e70845a64341f98c0e61f, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 442066140267b2440a5d35710e68575d, type: 2}
+  ProductionTime: 50
+  Liquids:
+  - Item: {fileID: 11400000, guid: 61395aee5791502488ae54a4b1204995, type: 2}
+    Amount: 50
+    Stats:
+      m_set:
+        m_properties: []

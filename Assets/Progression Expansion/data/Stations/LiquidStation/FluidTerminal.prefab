@@ -3709,7 +3709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 9b19793a3344ff64eb0f194637e40e73, type: 2}
-  VariantName: 
+  VariantKey: 
   SizeX: 2
   SizeY: 4
   SizeZ: 2
@@ -3901,7 +3901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_band: 1
   m_culledBehaviour:
-  - {fileID: 0}
   - {fileID: 5248317431454102326}
   m_culledObjects: []
 --- !u!114 &8875974949546954193

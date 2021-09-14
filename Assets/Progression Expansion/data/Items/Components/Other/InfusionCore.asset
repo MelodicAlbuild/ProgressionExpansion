@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: InfusionCore
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2869885369
+    Value1: 1231065744
+    Value2: 1785476992
+    Value3: 3188756137
+  m_name:
+    m_id: item.InfusionCore.name
+    m_text: Infusion Core
+    m_comment: Item name - InfusionCore
+  m_description:
+    m_id: item.InfusionCore.description
+    m_text: The Major Component in the Infusion Matrix
+    m_comment: Item description - InfusionCore
+  Category: {fileID: 11400000, guid: 3f7b5aeb5d9f3494ea12aef61c202228, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

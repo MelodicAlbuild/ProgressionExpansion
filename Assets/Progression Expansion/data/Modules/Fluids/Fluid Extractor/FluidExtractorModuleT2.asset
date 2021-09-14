@@ -19,7 +19,7 @@ MonoBehaviour:
     Value3: 2440263711
   m_name:
     m_id: item.FluidStorage.name
-    m_text: Fluid Extractor
+    m_text: Fluid Extractor T2
     m_comment: Fluid Storage Name
   m_description:
     m_id: item.New Item Definition.description
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - New Item Definition
   Category: {fileID: 11400000, guid: b134512597fc13343827d37bd52de8a6, type: 2}
   Prefabs:
-  - {fileID: 5857709324504539174, guid: 860c50ade6626514fa916cd334ee98ff, type: 3}
+  - {fileID: 5857709324504539174, guid: 011c25aa94c73bc439a37aa79487e8c0, type: 3}
   Icon: {fileID: 0}
   MaxStack: 5
   HelpPageId: 0

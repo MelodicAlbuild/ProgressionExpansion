@@ -9,7 +9,7 @@ public class LiquidExtractor : MonoBehaviour
     [SerializeField]
     private float m_ExtractionAmount;
     [SerializeField]
-    private LiquidDefinition m_CurrentDefinition;
+    private ItemDefinition m_CurrentDefinition;
 
     public void Awake()
     {
@@ -23,6 +23,6 @@ public class LiquidExtractor : MonoBehaviour
 
     public void Extract()
     {
-        FluidSystem.LiquidStorageManagerRef.StoreLiquid(m_CurrentDefinition, m_ExtractionAmount);
+        FluidSystem.LiquidStorageManagerRef.StoreLiquid(m_ExtractionAmount, m_CurrentDefinition.Category);
     }
 }

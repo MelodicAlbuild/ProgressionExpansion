@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: LiquidInfuserT1Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 72220506
+    Value1: 1087105129
+    Value2: 2942225069
+    Value3: 1721815229
+  Inputs:
+  - Item: {fileID: 11400000, guid: 9b9fe0ba092906940873c6a69ae801eb, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 0a8b51a9156eae54e878be499375a5fc, type: 2}
+    Amount: 10
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 6e70a4d3a89260142b19a0834f767565, type: 2}
+    Amount: 4
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 9c0df2606afe12d49bd03bc989e266e8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: ec71343f2abda464bad2366afb781cbb, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: bc2d5ea0f0f2c7d45bd402ab6b6b2ebb, type: 2}
+  ProductionTime: 10

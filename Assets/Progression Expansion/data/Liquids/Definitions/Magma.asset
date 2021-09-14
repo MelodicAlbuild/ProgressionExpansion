@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: Magma
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3579591126
+    Value1: 1243388726
+    Value2: 689515193
+    Value3: 3597567313
+  m_name:
+    m_id: item.Magma.name
+    m_text: Magma
+    m_comment: Item name - Magma
+  m_description:
+    m_id: item.Magma.description
+    m_text: Magma is Warm and Cuddly
+    m_comment: Item description - Magma
+  Category: {fileID: 11400000, guid: f7511b98efcbc9f4c8b30af93b0e35e3, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 1
+  HelpPageId: 
+  Stats:
+    m_properties: []

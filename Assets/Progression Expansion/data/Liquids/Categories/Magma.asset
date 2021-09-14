@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a15f72b3ab57c449f7a99589da12a1, type: 3}
+  m_Script: {fileID: 11500000, guid: a6163efd03df19a43a19d5c0ca169515, type: 3}
   m_Name: Magma
   m_EditorClassIdentifier: 
   m_assetId:

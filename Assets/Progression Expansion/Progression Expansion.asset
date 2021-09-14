@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce4e29b865b3fd47879e73172d49cd5, type: 3}
   m_Name: Progression Expansion
   m_EditorClassIdentifier: 
-  WorkshopItemId: 0
-  DeployDir: MelodicAlbuild.ProgressionExpansion
-  UploadTimestamp: 0
-  UniqueModId: MelodicAlbuild.ProgressionExpansion
+  WorkshopItemId: 2599901862
+  DeployDir: melodicalbuild.ProgressionExpansion
+  UploadTimestamp: 1631551322707
+  UniqueModId: melodicalbuild.ProgressionExpansion
   Title: Progression Expansion
-  Thumbnail: {fileID: 0}
+  Thumbnail: {fileID: 2800000, guid: d250ef848e5888045a3b54de5a7bf7a9, type: 3}
   LoadGroup: 0
   LoadOrder: 0
-  Version: 1.0
-  ChangeNote: First version
+  Version: 0.3
+  ChangeNote: Finished Liquid System
   SkipContentPatches: 0
   DebugBuild: 1
   AssemblyDefinitions:

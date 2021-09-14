@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: LiquidInfuserT2
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 1075575015
+    Value1: 1198942912
+    Value2: 3434270346
+    Value3: 3842701248
+  m_name:
+    m_id: item.FluidStorage.name
+    m_text: Liquid Infuser T2
+    m_comment: Fluid Storage Name
+  m_description:
+    m_id: item.New Item Definition.description
+    m_text: Liquid Infusion with Solids
+    m_comment: Item description - New Item Definition
+  Category: {fileID: 11400000, guid: b134512597fc13343827d37bd52de8a6, type: 2}
+  Prefabs:
+  - {fileID: 5857709324504539174, guid: 15a06aa288d9bd441bfef6fa3630ac0d, type: 3}
+  Icon: {fileID: 0}
+  MaxStack: 5
+  HelpPageId: 0
+  Stats:
+    m_properties:
+    - Property: {fileID: 11400000, guid: 748801089112e6447b70389e25d9e35a, type: 2}
+      Value:
+        IntValue: 0
+        FloatValue: 0
+        StringValue: 
+        ObjectValue: {fileID: 0}
+    - Property: {fileID: 11400000, guid: c635e5fb87ff7f24e9ad6b5bdeb10872, type: 2}
+      Value:
+        IntValue: 0
+        FloatValue: 0
+        StringValue: 
+        ObjectValue: {fileID: 11400000, guid: 5055f8d03c74fd848853a7b4ebd15d2b, type: 2}

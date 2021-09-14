@@ -19,7 +19,7 @@ MonoBehaviour:
     Value3: 4109960450
   m_name:
     m_id: item.FluidStorage.name
-    m_text: Fluid Storage
+    m_text: Fluid Storage T1
     m_comment: Fluid Storage Name
   m_description:
     m_id: item.New Item Definition.description

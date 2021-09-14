@@ -19,7 +19,7 @@ MonoBehaviour:
     Value3: 2590089873
   m_name:
     m_id: itemCategory.ItemResearc.name
-    m_text: Category Tech Liquid
+    m_text: Research Materials
     m_comment: Item category name - ItemResearc
   m_description:
     m_id: itemCategory.ItemResearc.description

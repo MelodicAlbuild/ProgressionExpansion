@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: InfusionCoreRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3069828252
+    Value1: 1173553884
+    Value2: 1356300967
+    Value3: 3053717481
+  Inputs:
+  - Item: {fileID: 11400000, guid: 019fbcb5e5686884795a26f7dc4fa0e5, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: e8357559b65d85740b4eb461b9cf3a3f, type: 2}
+    Amount: 4
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 6e70a4d3a89260142b19a0834f767565, type: 2}
+    Amount: 8
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 9b9fe0ba092906940873c6a69ae801eb, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories: []
+  ProductionTime: 80

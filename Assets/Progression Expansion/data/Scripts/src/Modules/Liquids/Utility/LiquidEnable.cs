@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LiquidEnable : MonoBehaviour
 {
-    public LiquidCategory waterCategory;
-    public LiquidCategory oilCategory;
-    public LiquidCategory mercuryCategory;
-    public LiquidCategory magmaCategory;
+    public ItemCategory waterCategory;
+    public ItemCategory oilCategory;
+    public ItemCategory mercuryCategory;
+    public ItemCategory magmaCategory;
 
     private LiquidStorageManager m_lStorageManager;
     private void Awake()

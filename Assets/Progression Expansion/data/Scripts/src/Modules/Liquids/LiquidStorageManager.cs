@@ -3,43 +3,19 @@ using UnityEngine;
 
 public class LiquidStorageManager : MonoBehaviour
 {
-    float m_totalWeight = 0;
-    int m_tick = 0;
-    public bool dEnabled = false;
-    Dictionary<LiquidCategory, HashSet<LiquidStorage>> m_storages = new Dictionary<LiquidCategory, HashSet<LiquidStorage>>();
-    HashSet<LiquidStorage> m_activeLiquidStorages = new HashSet<LiquidStorage>();
-    HashSet<LiquidInfuser> m_activeLiquidInfusers = new HashSet<LiquidInfuser>();
+    float                                            m_totalWeight          = 0;
+    int                                              m_tick                 = 0;
+    public bool                                      dEnabled               = false;
+    HashSet<LiquidStorage> m_storages             = new HashSet<LiquidStorage>();
+    HashSet<LiquidStorage> m_storagesActive = new HashSet<LiquidStorage>();
 
-    public static LiquidCategory WaterCategoryDefinition = null;
-    public static LiquidCategory OilCategoryDefinition = null;
-    public static LiquidCategory MercuryCategoryDefinition = null;
-    public static LiquidCategory MagmaCategoryDefinition = null;
+    public static ItemCategory WaterCategoryDefinition   = null;
+    public static ItemCategory OilCategoryDefinition     = null;
+    public static ItemCategory MercuryCategoryDefinition = null;
+    public static ItemCategory MagmaCategoryDefinition   = null;
 
-    public void EnableClasses(LiquidCategory wCategory, LiquidCategory oCategory, LiquidCategory meCategory, LiquidCategory maCategory)
+    public void EnableClasses(ItemCategory wCategory, ItemCategory oCategory, ItemCategory meCategory, ItemCategory maCategory)
     {
-        if (!dEnabled)
-        {
-            if (!m_storages.ContainsKey(wCategory))
-            {
-                m_storages.Add(wCategory, new HashSet<LiquidStorage>());
-            }
-
-            if (!m_storages.ContainsKey(oCategory))
-            {
-                m_storages.Add(oCategory, new HashSet<LiquidStorage>());
-            }
-
-            if (!m_storages.ContainsKey(meCategory))
-            {
-                m_storages.Add(meCategory, new HashSet<LiquidStorage>());
-            }
-
-            if (!m_storages.ContainsKey(maCategory))
-            {
-                m_storages.Add(maCategory, new HashSet<LiquidStorage>());
-            }
-            dEnabled = true;
-        }
 
         if(WaterCategoryDefinition == null) 
         {
@@ -73,7 +49,7 @@ public class LiquidStorageManager : MonoBehaviour
     /// <summary>
     /// Gets all production modules.
     /// </summary>
-    public DictionaryReader<LiquidCategory, HashSet<LiquidStorage>> Storages
+    public HashSet<LiquidStorage> Storages
     {
         get { return m_storages; }
     }
@@ -83,17 +59,7 @@ public class LiquidStorageManager : MonoBehaviour
     /// </summary>
     public void RegisterActive(LiquidStorage module)
     {
-        if (!m_storages.ContainsKey(module.LiquidCategory))
-        {
-            m_activeLiquidStorages.Add(module);
-            m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
-        }
-        else
-        {
-            m_storages.Remove(module.LiquidCategory);
-            m_activeLiquidStorages.Add(module);
-            m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
-        }
+        m_storagesActive.Add(module);
     }
 
     /// <summary>
@@ -101,9 +67,7 @@ public class LiquidStorageManager : MonoBehaviour
     /// </summary>
     public void UnregisterActive(LiquidStorage module)
     {
-        m_activeLiquidStorages.Remove(module);
-        m_storages.Remove(module.LiquidCategory);
-        m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
+        m_storagesActive.Remove(module);
     }
 
     /// <summary>
@@ -111,17 +75,7 @@ public class LiquidStorageManager : MonoBehaviour
     /// </summary>
     public void Register(LiquidStorage module)
     {
-        if (!m_storages.ContainsKey(module.LiquidCategory))
-        {
-            m_activeLiquidStorages.Add(module);
-            m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
-        }
-        else
-        {
-            m_storages.Remove(module.LiquidCategory);
-            m_activeLiquidStorages.Add(module);
-            m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
-        }
+        m_storages.Add(module);
     }
 
     /// <summary>
@@ -129,28 +83,7 @@ public class LiquidStorageManager : MonoBehaviour
     /// </summary>
     public void Unregister(LiquidStorage module)
     {
-        m_activeLiquidStorages.Remove(module);
-        m_storages.Remove(module.LiquidCategory);
-        m_storages.Add(module.LiquidCategory, m_activeLiquidStorages);
-    }
-
-    /// <summary>
-    /// Registers production module.
-    /// </summary>
-    public void RegisterInfuser(LiquidInfuser module)
-    {
-        if(!m_activeLiquidInfusers.Contains(module))
-        {
-            m_activeLiquidInfusers.Add(module);
-        }
-    }
-
-    /// <summary>
-    /// Unregisters production module.
-    /// </summary>
-    public void UnregisterInfuser(LiquidInfuser module)
-    {
-        m_activeLiquidInfusers.Remove(module);
+        m_storages.Remove(module);
     }
 
     /// <summary>
@@ -166,49 +99,48 @@ public class LiquidStorageManager : MonoBehaviour
         m_totalWeight += weight;
     }
 
-    public float StoreLiquid(LiquidDefinition liquid, float amount)
+    public float StoreLiquid(float amount, ItemCategory category)
     {
-        var storagesForTargetLiquid = m_storages[liquid.Category];
+        var storagesForTargetLiquid = m_storages;
         foreach (var storage in storagesForTargetLiquid)
         {
-            if (storage.Store(ref amount))
+            if (storage.Store(ref amount, ref category))
                 return amount;
             break;
         }
         return 0f;
     }
 
-    public bool RemoveLiquid(LiquidDefinition liquid, float amount)
+    public bool RemoveLiquid(float amount, ItemCategory category)
     {
-        var storagesForTargetLiquid = m_storages[liquid.Category];
+        var storagesForTargetLiquid = m_storages;
         foreach (var storage in storagesForTargetLiquid)
         {
-            if (storage.Remove(ref amount))
+            if (storage.Remove(ref amount, ref category))
                 return true;
             break;
         }
         return false;
     }
 
-    public float GetLiquidValue(LiquidCategory category)
-    {
-        float total = 0f;
-        var storagesForTargetLiquid = m_storages[category];
-        foreach (var storage in storagesForTargetLiquid)
-        {
-            total += storage.CurrentStorage;
-        }
-        return total;
-    }
-
-    public void ExportDict()
-    {
-        foreach (var obj in m_storages)
-        {
-            foreach (var value in obj.Value)
-            {
-                Debug.Log("Category: " + obj.Key + " Module: " + value.name);
+    public bool RemoveLiquidBatch(InventoryItem[] liquids) {
+        for (var i = 0; i < liquids.Length; i++) {
+            var storagesForTargetLiquid = m_storages;
+            foreach (var storage in storagesForTargetLiquid) {
+                if (!storage.Remove(ref liquids[i].Amount, ref liquids[i].Item.Category)) return false;
+                break;
             }
         }
+        return true;
+    }
+
+    public float GetLiquidValue(ItemCategory category)
+    {
+        float total = 0f;
+        foreach(LiquidStorage storage in m_storages)
+        {
+            total += storage.GetValueType(category);
+        }
+        return total;
     }
 }

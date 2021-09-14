@@ -7,23 +7,9 @@ public class UIInit : MonoBehaviour
     public UiScreen m_UIScreen;
     [SerializeField]
     private string m_UiName;
-    public void Awake()
+    public void Start()
     {
-        int m_Length = GlobalConfig<ScreensConfig>.Value.Elements.Length;
-        ScreensConfig.Element[] m_Elements = new ScreensConfig.Element[m_Length + 1];
-        int i = 0;
-        foreach(var obj in GlobalConfig<ScreensConfig>.Value.Elements)
-        {
-            m_Elements[i] = obj;
-            i++;
-        }
-        m_Elements[m_Length] = new ScreensConfig.Element { Name = m_UiName, Prefab = m_UIScreen };
-
-        GlobalConfig<ScreensConfig>.Value.Elements = m_Elements;
-        foreach(var obj in GlobalConfig<ScreensConfig>.Value.Elements)
-        {
-            Debug.Log(obj.Name + " " + obj.Prefab);
-        }
+        GlobalConfig<ScreensConfig>.Value.SetScreen(m_UiName, m_UIScreen);
     }
     public void SetName(string name)
     {

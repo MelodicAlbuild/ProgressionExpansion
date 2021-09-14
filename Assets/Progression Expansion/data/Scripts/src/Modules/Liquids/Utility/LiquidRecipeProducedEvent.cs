@@ -4,5 +4,5 @@ using UnityEngine;
 
 public struct LiquidRecipeProducedEvent
 {
-    public LiquidRecipe Recipe;
+    public LiquidRecipe LRecipe;
 }

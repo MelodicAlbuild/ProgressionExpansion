@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: LiquidMasteryRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3956259318
+    Value1: 1200926847
+    Value2: 1551116710
+    Value3: 2336224854
+  Inputs:
+  - Item: {fileID: 11400000, guid: 7c5a3e06ec65a724b8abc655e0688a14, type: 2}
+    Amount: 500
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 0376b63b12e60c847989caa1e18f791f, type: 2}
+    Amount: 500
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: fe962e25197701d43869a3cf98075fba, type: 2}
+    Amount: 500
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: d7cf07260d5412441b28438338c43116, type: 2}
+    Amount: 500
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 649b8adbbdf2f034296b16dae3e72487, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 56e4fa4a105ac1245806bf759ecc2435, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 5488866930f44bd40baf0da145cb06df, type: 2}
+  ProductionTime: 500

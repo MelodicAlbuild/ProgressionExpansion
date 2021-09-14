@@ -19,7 +19,7 @@ MonoBehaviour:
     Value3: 2389061272
   m_name:
     m_id: item.FluidStorage.name
-    m_text: Liquid Infuser
+    m_text: Liquid Infuser T1
     m_comment: Fluid Storage Name
   m_description:
     m_id: item.New Item Definition.description
@@ -33,15 +33,15 @@ MonoBehaviour:
   HelpPageId: 0
   Stats:
     m_properties:
-    - Property: {fileID: 11400000, guid: c635e5fb87ff7f24e9ad6b5bdeb10872, type: 2}
-      Value:
-        IntValue: 0
-        FloatValue: 0
-        StringValue: 
-        ObjectValue: {fileID: 11400000, guid: 5055f8d03c74fd848853a7b4ebd15d2b, type: 2}
     - Property: {fileID: 11400000, guid: 748801089112e6447b70389e25d9e35a, type: 2}
       Value:
         IntValue: 0
         FloatValue: 0
         StringValue: 
         ObjectValue: {fileID: 0}
+    - Property: {fileID: 11400000, guid: c635e5fb87ff7f24e9ad6b5bdeb10872, type: 2}
+      Value:
+        IntValue: 0
+        FloatValue: 0
+        StringValue: 
+        ObjectValue: {fileID: 11400000, guid: 5055f8d03c74fd848853a7b4ebd15d2b, type: 2}

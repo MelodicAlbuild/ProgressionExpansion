@@ -5,8 +5,8 @@
 		"UnityHub"
 		{
 			"HasRunKey"		"HKEY_LOCAL_MACHINE\\SOFTWARE\\Unity Technologies\\Hub"
-			"Process 1"		"%INSTALLDIR%\\Extra\\UnityHubSetup.exe"
-			"Command 1"		"/S"
+			"process 1"		"%INSTALLDIR%\\Extra\\UnityHubSetup.exe"
+			"command 1"		"/S"
 			"NoCleanUp"		"1"
 		}
 	}
