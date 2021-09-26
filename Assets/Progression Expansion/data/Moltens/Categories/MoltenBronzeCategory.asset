@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6163efd03df19a43a19d5c0ca169515, type: 3}
+  m_Name: MoltenBronzeCategory
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3254004633
+    Value1: 1300190270
+    Value2: 2267028118
+    Value3: 1949104672
+  m_name:
+    m_id: itemCategory.MoltenTinCategory.name
+    m_text: Molten Bronze
+    m_comment: Item category name - MoltenTinCategory
+  m_description:
+    m_id: itemCategory.MoltenTinCategory.description
+    m_text: The Category of Lovely Molten Bronze
+    m_comment: Item category description - MoltenTinCategory
+  Icon: {fileID: 0}
+  SortOrder: 0

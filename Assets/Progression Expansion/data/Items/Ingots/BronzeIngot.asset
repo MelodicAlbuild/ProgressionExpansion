@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - BronzeIngot
   Category: {fileID: 11400000, guid: e7e24adb46dea6041bff192cbd506202, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: b47ed71b84b07974bbe53d23418b7efd, type: 3}
   MaxStack: 99
   HelpPageId: 
   Stats:

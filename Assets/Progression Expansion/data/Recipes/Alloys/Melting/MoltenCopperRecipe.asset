@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e397bb741b43bc4c8981baaed90e3c3, type: 3}
+  m_Name: MoltenCopperRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2211875538
+    Value1: 1271758340
+    Value2: 2562455184
+    Value3: 4128540213
+  Inputs:
+  - Item: {fileID: 11400000, guid: d1c5ccba9f65302408be2e46975020e7, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 7fb638f6bffe5c742879181e70796747, type: 2}
+    Amount: 2
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: 2fb6d1a3ad9c63846b9a92647bcfa24f, type: 2}
+  ProductionTime: 5
+  Moltens: []
+  RecipeType: 0

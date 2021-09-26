@@ -1,6 +1,7 @@
 using System.IO;
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProgressionExpansion : GameMod {
     public override void Load() {
@@ -22,5 +23,11 @@ public class ProgressionExpansion : GameMod {
         log.Write($"\r\nPatched {i} methods.");
         log.Write($"\r\n{modName} loaded.");
         Debug.Log(log.ToString());
+    }
+
+    public override void OnGameLoaded(Scene gameScene)
+    {
+        base.OnGameLoaded(gameScene);
+        new DepositSystem().InitDeposits();
     }
 }

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e397bb741b43bc4c8981baaed90e3c3, type: 3}
+  m_Name: PressedIronIngotRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 4197585565
+    Value1: 1323314444
+    Value2: 3164387713
+    Value3: 932711105
+  Inputs: []
+  Output:
+    Item: {fileID: 11400000, guid: f74e4356dcd38b7418a666b63c0304b1, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: 18e3f1d92ebdeef44bcfa9c328661328, type: 2}
+  ProductionTime: 10
+  Moltens:
+  - Item: {fileID: 11400000, guid: e32a893d104415443b678cd6801afc3a, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  RecipeType: 3

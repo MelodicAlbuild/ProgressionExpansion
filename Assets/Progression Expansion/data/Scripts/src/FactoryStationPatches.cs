@@ -22,6 +22,15 @@ public static class CheckRecipeInputsPatch1 {
             }
         }
 
+        // An additional check for molten.
+        if (recipe is MoltenRecipe moltenRecipe)
+        {
+            foreach (var molten in moltenRecipe.Moltens)
+            {
+                MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(molten.Item.Category);
+            }
+        }
+
         foreach (var item in recipe.Inputs) {
             var missingAmount = item.Amount - producer.GetLoadedAmount(item.Item, item.Stats);
             if (missingAmount > 0 && cargo.GetAmount(item.Item, item.Stats, item.Amount) < missingAmount) return false;
@@ -54,10 +63,58 @@ public static class CheckRecipeInputsPatch2 {
 
     public static bool TryLoadInputs(Producer producer, InventoryBase source, ref Recipe loadedInputs) {
         // 'source' is OnlineStorage.
-        if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
-                                 && (producer.ActiveRecipe is LiquidRecipe liquidRecipe && FluidSystem.LiquidStorageManagerRef.RemoveLiquidBatch(liquidRecipe.Liquids) || true)) {
-            loadedInputs = producer.ActiveRecipe;
-            return true;
+        if (producer.ActiveRecipe is LiquidRecipe)
+        {
+            if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
+                                 && (producer.ActiveRecipe is LiquidRecipe liquidRecipe && FluidSystem.LiquidStorageManagerRef.RemoveLiquidBatch(liquidRecipe.Liquids) || true))
+            {
+                loadedInputs = producer.ActiveRecipe;
+                return true;
+            }
+        }
+        // 'source' is OnlineStorage.
+        if (producer.ActiveRecipe is MoltenRecipe moltenRecipe)
+        {
+            switch(moltenRecipe.RecipeType)
+            {
+                case MoltenType.Melting:
+                    if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs))
+                    {
+                        loadedInputs = producer.ActiveRecipe;
+                        return true;
+                    }
+                    break;
+                case MoltenType.Alloying:
+                    if(loadedInputs == null && MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens))
+                    {
+                        loadedInputs = producer.ActiveRecipe;
+                        return true;
+                    }
+                    break;
+                case MoltenType.ItemAlloying:
+                    if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
+                                 && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens) || true))
+                    {
+                        loadedInputs = producer.ActiveRecipe;
+                        return true;
+                    }
+                    break;
+                case MoltenType.Pressing:
+                    if (loadedInputs == null && MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens))
+                    {
+                        loadedInputs = producer.ActiveRecipe;
+                        return true;
+                    }
+                    break;
+                case MoltenType.Default:
+                    if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
+                                 && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens) || true))
+                    {
+                        loadedInputs = producer.ActiveRecipe;
+                        return true;
+                    }
+                    break;
+            }
         }
         return false;
     }
@@ -84,13 +141,12 @@ public static class ShowHaveCountPatch
     [HarmonyPostfix]
     public static void Postfix(ref Recipe recipe, ref RichTextWriter result, ref FactoryTexts ___m_texts)
     {
-        Debug.Log("" + recipe.GetType());
         if (recipe is LiquidRecipe liquidRecipe)
         {
             foreach (InventoryItem obj in liquidRecipe.Liquids)
             {
 
-                if (FluidSystem.LiquidStorageManagerRef.GetLiquidValue(LiquidStorageManager.WaterCategoryDefinition) >= obj.Amount)
+                if (FluidSystem.LiquidStorageManagerRef.GetLiquidValue(obj.Item.Category) >= obj.Amount)
                 {
                     result.CurrentStyle = "Text"; // White text.
                 }
@@ -99,10 +155,87 @@ public static class ShowHaveCountPatch
                     result.CurrentStyle = "TextError"; // Red text.
                 }
                 result.Text.ConcatFormat(___m_texts.InputFormat.Text, obj.Amount, obj.Item.Name, null);
-                result.Text.ConcatFormat(___m_texts.InputAvailableFormat, FluidSystem.LiquidStorageManagerRef.GetLiquidValue(LiquidStorageManager.WaterCategoryDefinition));
+                result.Text.ConcatFormat(___m_texts.InputAvailableFormat, FluidSystem.LiquidStorageManagerRef.GetLiquidValue(obj.Item.Category));
+            }
+            result.Text.AppendLine();
+        } else if (recipe is MoltenRecipe moltenRecipe)
+        {
+            foreach (InventoryItem obj in moltenRecipe.Moltens)
+            {
+
+                if (MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category) >= obj.Amount)
+                {
+                    result.CurrentStyle = "Text"; // White text.
+                }
+                else
+                {
+                    result.CurrentStyle = "TextError"; // Red text.
+                }
+                result.Text.ConcatFormat(___m_texts.InputFormat.Text, obj.Amount, obj.Item.Name, null);
+                result.Text.ConcatFormat(___m_texts.InputAvailableFormat, MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category));
+            }
+            result.Text.AppendLine();
+        }
+    }
+}
+
+[HarmonyPatch]
+[UsedImplicitly]
+public static class BuildAlloyOutputSystem
+{
+    private static readonly MethodInfo FACTORY_STATION_TRY_STORE = typeof(FactoryStation).GetMethod("TryStore", BindingFlags.NonPublic | BindingFlags.Instance);
+    private static readonly MethodInfo FACTORY_STATION_ON_RECIPE_PRODUCED = typeof(FactoryStation).GetMethod("OnRecipeProduced", BindingFlags.NonPublic | BindingFlags.Instance);
+
+    [HarmonyTargetMethod]
+    [UsedImplicitly]
+    public static MethodBase TargetMethod()
+    {
+        return typeof(FactoryStation).GetMethod("TryCreateOutput", BindingFlags.NonPublic | BindingFlags.Instance);
+    }
+
+    public static bool TryCreateOutput(ref FactoryStation __instance, ref Recipe ___m_loadedInputs)
+    {
+        if (__instance.ActiveRecipe is MoltenRecipe moltenRecipe)
+        {
+            switch(moltenRecipe.RecipeType)
+            {
+                case MoltenType.Melting:
+                    MoltenSystem.MoltenStorageManagerRef.StoreMolten(__instance.ActiveRecipe.Output.Amount, __instance.ActiveRecipe.Output.Item.Category);
+                    return true;
+                case MoltenType.Alloying:
+                    MoltenSystem.MoltenStorageManagerRef.StoreMolten(__instance.ActiveRecipe.Output.Amount, __instance.ActiveRecipe.Output.Item.Category);
+                    return true;
+                case MoltenType.ItemAlloying:
+                    MoltenSystem.MoltenStorageManagerRef.StoreMolten(__instance.ActiveRecipe.Output.Amount, __instance.ActiveRecipe.Output.Item.Category);
+                    return true;
+                case MoltenType.Pressing:
+                    return TryCreateOutput_Original(ref __instance, ref ___m_loadedInputs);
+                case MoltenType.Default:
+                    return TryCreateOutput_Original(ref __instance, ref ___m_loadedInputs);
             }
         }
-        result.Text.AppendLine();
+
+        // Not our recipe, run the original method.
+        return TryCreateOutput_Original(ref __instance, ref ___m_loadedInputs);
+    }
+
+    public static bool TryCreateOutput_Original(ref FactoryStation __instance, ref Recipe ___m_loadedInputs)
+    {
+        if ((bool)FACTORY_STATION_TRY_STORE.Invoke(__instance, new object[] { __instance.ActiveRecipe.Output }))
+        {
+            ___m_loadedInputs = null;
+            FACTORY_STATION_ON_RECIPE_PRODUCED.Invoke(__instance, new object[] { __instance.ActiveRecipe });
+            return true;
+        }
+        return false;
+    }
+
+    [UsedImplicitly]
+    [HarmonyPrefix]
+    public static bool Prefix(ref FactoryStation __instance, ref bool __result, ref Recipe ___m_loadedInputs)
+    {
+        __result = TryCreateOutput(ref __instance, ref ___m_loadedInputs);
+        return false; // So we don't run the original method.
     }
 }
 

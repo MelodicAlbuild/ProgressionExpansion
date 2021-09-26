@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e397bb741b43bc4c8981baaed90e3c3, type: 3}
+  m_Name: PressedCobaltIngotRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 4211338646
+    Value1: 1079622758
+    Value2: 839930262
+    Value3: 1911733241
+  Inputs: []
+  Output:
+    Item: {fileID: 11400000, guid: 7671d3c1e707a6c438bab608988bb8e9, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: 4db3565dfa2f5c64c8738b52e8b19e0b, type: 2}
+  ProductionTime: 10
+  Moltens:
+  - Item: {fileID: 11400000, guid: eb534068dd8f2c24bb7c7b80a66b1e58, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  RecipeType: 3

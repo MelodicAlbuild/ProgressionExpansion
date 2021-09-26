@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: AdvancedAlloying
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 589448809
+    Value1: 1179551536
+    Value2: 4171650958
+    Value3: 727990309
+  m_name:
+    m_id: item.AdvancedAlloying.name
+    m_text: Advanced Alloying
+    m_comment: Item name - AdvancedAlloying
+  m_description:
+    m_id: item.AdvancedAlloying.description
+    m_text: The Research Behind the Advanced Alloys of this World
+    m_comment: Item description - AdvancedAlloying
+  Category: {fileID: 11400000, guid: 30c1f1eabe9eaff4aa05fe46ec864cec, type: 2}
+  Prefabs: []
+  Icon: {fileID: 21300000, guid: 699f232339a3e1f4d854ee56634abdb4, type: 3}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

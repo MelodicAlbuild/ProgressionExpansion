@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: AlloyForgeT1Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3938587655
+    Value1: 1102189986
+    Value2: 2090854075
+    Value3: 2493426484
+  Inputs:
+  - Item: {fileID: 11400000, guid: 8df9c647d90ecaa4e9539cdeb5e3683c, type: 2}
+    Amount: 3
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: ca8ecba733454c8439fdc1c068756eb2, type: 2}
+    Amount: 3
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: c5703a9caa05f054885f1c55e690cac8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 7cd1d79f856c9fe4b86ef26e9831dc93, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 1042c9fefce144a4ab9f169e3e2c4de6, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 71518a2fb03bdef42b3c22fdf5e7a0c8, type: 2}
+  ProductionTime: 10

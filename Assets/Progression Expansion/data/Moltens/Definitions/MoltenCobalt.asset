@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: MoltenCobalt
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2248422846
+    Value1: 1120073949
+    Value2: 146261947
+    Value3: 2246162026
+  m_name:
+    m_id: item.New Item Definition.name
+    m_text: Molten Cobalt
+    m_comment: Item name - New Item Definition
+  m_description:
+    m_id: item.New Item Definition.description
+    m_text: Molten Cobalt
+    m_comment: Item description - New Item Definition
+  Category: {fileID: 11400000, guid: 8a79d4e616d9108459e3444f050efd74, type: 2}
+  Prefabs: []
+  Icon: {fileID: 21300000, guid: b69459c40a5c62d4090c3a8ee48aadc5, type: 3}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

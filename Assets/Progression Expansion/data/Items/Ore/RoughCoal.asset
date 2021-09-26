@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: RoughCoal
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 188960318
+    Value1: 1229023173
+    Value2: 1794367387
+    Value3: 4174418998
+  m_name:
+    m_id: item.RoughCoal.name
+    m_text: Rough Coal
+    m_comment: Item name - RoughCoal
+  m_description:
+    m_id: item.RoughCoal.description
+    m_text: The Roughed Version of Coal that has Furher Refinement
+    m_comment: Item description - RoughCoal
+  Category: {fileID: 11400000, guid: 88fd6c5211a0f9744880c875b8ccd999, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 100
+  HelpPageId: 
+  Stats:
+    m_properties: []

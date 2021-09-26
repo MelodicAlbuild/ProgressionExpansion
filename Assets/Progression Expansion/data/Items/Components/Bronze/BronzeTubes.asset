@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - CopperPlate
   Category: {fileID: 11400000, guid: 3f7b5aeb5d9f3494ea12aef61c202228, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 8e55b3606ee85b841acef98f4b339183, type: 3}
   MaxStack: 99
   HelpPageId: 
   Stats:

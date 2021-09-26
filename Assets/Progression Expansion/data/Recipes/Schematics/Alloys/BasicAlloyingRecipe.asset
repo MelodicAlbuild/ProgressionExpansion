@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: BasicAlloyingRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2456140328
+    Value1: 1190379924
+    Value2: 2098939555
+    Value3: 1987825001
+  Inputs:
+  - Item: {fileID: 11400000, guid: 9386d447191c7aa4fa913943abd75481, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: b157d84f7de97894598c4be044d30828, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: c5703a9caa05f054885f1c55e690cac8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: ddc2bcd9585b50f49a47b9b59a24da12, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: cf7a13488f08f934185bd003b89c23f0, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 430e7ff45de076e48bce1c00f4897e2d, type: 2}
+  ProductionTime: 120

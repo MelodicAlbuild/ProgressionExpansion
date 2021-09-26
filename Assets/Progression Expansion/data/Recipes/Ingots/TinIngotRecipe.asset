@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: TinIngotRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 1108384782
+    Value1: 1293976947
+    Value2: 907116161
+    Value3: 383270752
+  Inputs:
+  - Item: {fileID: 11400000, guid: b08df63e393b4fe4ebdd8c844b807fa8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: b157d84f7de97894598c4be044d30828, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: 5acdd6b437b97fc419656d27d9b088d3, type: 2}
+  - {fileID: 11400000, guid: d4d72ba48732d5b4e944b5c262f12780, type: 2}
+  ProductionTime: 5

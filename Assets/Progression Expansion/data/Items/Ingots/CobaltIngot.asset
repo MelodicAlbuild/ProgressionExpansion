@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: CobaltIngot
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 473765735
+    Value1: 1282044030
+    Value2: 2154539907
+    Value3: 2659956873
+  m_name:
+    m_id: item.CobaltIngot.name
+    m_text: Cobalt Ingot
+    m_comment: Item name - CobaltIngot
+  m_description:
+    m_id: item.CobaltIngot.description
+    m_text: Used in production to produce base components
+    m_comment: Item description - CobaltIngot
+  Category: {fileID: 11400000, guid: e7e24adb46dea6041bff192cbd506202, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 20
+  HelpPageId: 
+  Stats:
+    m_properties: []

@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - Oil
   Category: {fileID: 11400000, guid: 06af43d269590474588712c6c3e27b7b, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: daa897eeb95e610418025382f59004ed, type: 3}
   MaxStack: 1
   HelpPageId: 
   Stats:

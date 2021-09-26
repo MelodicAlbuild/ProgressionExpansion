@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - Mercury
   Category: {fileID: 11400000, guid: a29c87715d426aa4dbf4c9eeb4737319, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 28f96b3f1babc7c47a746c0a0b385bdb, type: 3}
   MaxStack: 1
   HelpPageId: 
   Stats:

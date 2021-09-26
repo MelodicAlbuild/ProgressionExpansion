@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: AlloyForgeT2
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3225960453
+    Value1: 1223585540
+    Value2: 2099057342
+    Value3: 2327177895
+  m_name:
+    m_id: item.AlloyForgeT1.name
+    m_text: Alloy Forge T2
+    m_comment: Item name - AlloyForgeT1
+  m_description:
+    m_id: item.AlloyForgeT1.description
+    m_text: The Alloy Forge Unlocking Upgrade
+    m_comment: Item description - AlloyForgeT1
+  Category: {fileID: 11400000, guid: 30c1f1eabe9eaff4aa05fe46ec864cec, type: 2}
+  Prefabs: []
+  Icon: {fileID: 21300000, guid: e8f5daec86a2ea74f87a72c22056f03a, type: 3}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

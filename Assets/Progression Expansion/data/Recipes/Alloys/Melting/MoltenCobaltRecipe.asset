@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e397bb741b43bc4c8981baaed90e3c3, type: 3}
+  m_Name: MoltenCobaltRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3233478336
+    Value1: 1159905036
+    Value2: 881197213
+    Value3: 1386411054
+  Inputs:
+  - Item: {fileID: 11400000, guid: de9ea6769eeea3c4ebfe603242c4ac3c, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: eb534068dd8f2c24bb7c7b80a66b1e58, type: 2}
+    Amount: 2
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: faf00376d555e3748be0821c543f53fd, type: 2}
+  ProductionTime: 5
+  Moltens: []
+  RecipeType: 0

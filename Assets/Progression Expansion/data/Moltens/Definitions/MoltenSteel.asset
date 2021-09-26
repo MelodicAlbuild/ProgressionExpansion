@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: MoltenSteel
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 783011350
+    Value1: 1253959210
+    Value2: 2506315690
+    Value3: 3779211686
+  m_name:
+    m_id: item.New Item Definition.name
+    m_text: Molten Steel
+    m_comment: Item name - New Item Definition
+  m_description:
+    m_id: item.New Item Definition.description
+    m_text: Molten Steel
+    m_comment: Item description - New Item Definition
+  Category: {fileID: 11400000, guid: fa3a1fe6ab41acb4c85f52d4efc27e1b, type: 2}
+  Prefabs: []
+  Icon: {fileID: 21300000, guid: 5ae66a439330d5a47a82730a56819b67, type: 3}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

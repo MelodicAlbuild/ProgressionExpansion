@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: TinOreRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3366614007
+    Value1: 1178145988
+    Value2: 528159362
+    Value3: 2167148789
+  Inputs:
+  - Item: {fileID: 11400000, guid: e3e434b05c761494b9fd3fa663490d8f, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: b08df63e393b4fe4ebdd8c844b807fa8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades: []
+  Categories:
+  - {fileID: 11400000, guid: a9a786ca4e6ad014ea600fcd849719bb, type: 2}
+  - {fileID: 11400000, guid: 71518a2fb03bdef42b3c22fdf5e7a0c8, type: 2}
+  ProductionTime: 5

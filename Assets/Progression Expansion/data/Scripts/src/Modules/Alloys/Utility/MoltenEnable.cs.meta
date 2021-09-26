@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 85d53528df8edfb4285d1f328d46d157
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tinCategory: {fileID: 11400000, guid: 9ebe88960ca4ac945a4f5940ab864f09, type: 2}
+  - copperCategory: {fileID: 11400000, guid: 717968a7a9c96be4eb238f32f6051cc4, type: 2}
+  - ironCategory: {fileID: 11400000, guid: 21c05a13c3faf5941858095b4119abd5, type: 2}
+  - cobaltCategory: {fileID: 11400000, guid: 8a79d4e616d9108459e3444f050efd74, type: 2}
+  - titaniumCategory: {fileID: 11400000, guid: 9c4f152f3e5a1d54f912abf0785886c5, type: 2}
+  - bronzeCategory: {fileID: 11400000, guid: 99b24f1ce345f7d469a1027802afc247, type: 2}
+  - steelCategory: {fileID: 11400000, guid: fa3a1fe6ab41acb4c85f52d4efc27e1b, type: 2}
+  - aluminumCategory: {fileID: 11400000, guid: 4c8428083aca1204d9ca2b6d2ff260fb, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

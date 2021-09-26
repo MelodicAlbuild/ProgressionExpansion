@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Liquid description - Water
   Category: {fileID: 11400000, guid: b06d4df39e9e6cd4ab355abe14b5436d, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: fbadadcc64c38be47bf9b024b90ce282, type: 3}
   MaxStack: 1
   HelpPageId: 
   Stats:

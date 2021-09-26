@@ -3,6 +3,7 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Liquids/Recipe/Recipe")]
 public class LiquidRecipe : Recipe {
+    [Header("Liquid Addons")]
     public InventoryItem[] Liquids;
 
     [Validate("Recipe must have at least one fluid input")]

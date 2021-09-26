@@ -7,7 +7,7 @@ public class FluidSystem : MonoBehaviour
     public static LiquidStorageManager LiquidStorageManagerRef;
     private void Awake()
     {
-        if (LiquidStorageManagerRef != null)
+        if (LiquidStorageManagerRef == null)
         {
             if (gameObject.TryGetComponentInParent(out TrainProduction production) && !production.TryGetComponent(out LiquidStorageManager system))
             {
