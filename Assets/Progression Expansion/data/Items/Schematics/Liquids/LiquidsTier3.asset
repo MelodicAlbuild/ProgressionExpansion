@@ -27,7 +27,7 @@ MonoBehaviour:
     m_comment: Item description - LiquidsTier1
   Category: {fileID: 11400000, guid: 30c1f1eabe9eaff4aa05fe46ec864cec, type: 2}
   Prefabs: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: c3902517de5f6824b80c2f4d5fc1eb71, type: 3}
   MaxStack: 5
   HelpPageId: 
   Stats:

@@ -3323,6 +3323,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 11e95029fdbd3ab40b9aa67339477a1b, type: 2}
   VariantKey: 
+  VariantIcon: {fileID: 0}
+  VariantName:
+    m_id: .
+    m_text: 
+    m_comment: .
   SizeX: 2
   SizeY: 4
   SizeZ: 2
@@ -5383,7 +5388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34db48975a78307458b00431343200d6, type: 2}
+  - {fileID: 2100000, guid: bde55080d07401f408e7516f6e775d40, type: 2}
   - {fileID: 2100000, guid: c4345756826df40468b90bcf01e4b87e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

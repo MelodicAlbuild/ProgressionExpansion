@@ -31,7 +31,8 @@ MonoBehaviour:
         m_properties: []
   Icon: {fileID: 0}
   Order: 0
-  RequiredUpgrades: []
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: aee7994fd265db0419874cea81d7f69c, type: 2}
   Categories:
   - {fileID: 11400000, guid: 2fb6d1a3ad9c63846b9a92647bcfa24f, type: 2}
   ProductionTime: 5

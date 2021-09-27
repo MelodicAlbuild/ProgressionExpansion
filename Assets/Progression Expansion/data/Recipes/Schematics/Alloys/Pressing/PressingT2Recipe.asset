@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: PressingT2Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2275244086
+    Value1: 1250594590
+    Value2: 449155003
+    Value3: 1322217805
+  Inputs:
+  - Item: {fileID: 11400000, guid: 545c88216ffc1a641898992e3c5fe046, type: 2}
+    Amount: 10
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: d04b320d4cfa5bf46be14e4cdd43b157, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 4e4dd2fb761fd6c48aeda11f91db799d, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 430e7ff45de076e48bce1c00f4897e2d, type: 2}
+  - {fileID: 11400000, guid: e560f99bcc6164f40b241fbb15db1475, type: 2}
+  ProductionTime: 240

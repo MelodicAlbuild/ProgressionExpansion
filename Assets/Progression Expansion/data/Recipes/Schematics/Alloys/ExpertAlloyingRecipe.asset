@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: ExpertAlloyingRecipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 4142181027
+    Value1: 1341066117
+    Value2: 3471980167
+    Value3: 2383199049
+  Inputs:
+  - Item: {fileID: 11400000, guid: 7671d3c1e707a6c438bab608988bb8e9, type: 2}
+    Amount: 20
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 8194be0ee20cc9b47b4bc7b97345a9a3, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 9e2ddf144b45a77468006046a1c3b91f, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 2bd7b88db440ddf40b2032fc3843579b, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 5488866930f44bd40baf0da145cb06df, type: 2}
+  ProductionTime: 480

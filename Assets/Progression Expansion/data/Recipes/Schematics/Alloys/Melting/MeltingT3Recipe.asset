@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: MeltingT3Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2935441207
+    Value1: 1220839974
+    Value2: 452569521
+    Value3: 4274674066
+  Inputs:
+  - Item: {fileID: 11400000, guid: 952ea7420b9c4f24697b099446febd72, type: 2}
+    Amount: 10
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 3734a3dd50fd41e41a15c7897b1e47eb, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 0}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: fb88d42ac3f8a7b48a974b5c86cc3864, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: f563746170ce0254ebdf9568139d4f78, type: 2}
+  - {fileID: 11400000, guid: 0c4385596097f1b42ab81fa50b991e73, type: 2}
+  ProductionTime: 480

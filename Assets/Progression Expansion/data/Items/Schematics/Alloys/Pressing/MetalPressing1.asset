@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e1d28b2a975240a2e64d79b7d21c7, type: 3}
+  m_Name: MetalPressing1
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3207451876
+    Value1: 1282273639
+    Value2: 4045069992
+    Value3: 3650600217
+  m_name:
+    m_id: item.MetalPressing1.name
+    m_text: Metal Pressing for Beginners
+    m_comment: Item name - MetalPressing1
+  m_description:
+    m_id: item.MetalPressing1.description
+    m_text: The Beginners Guide for Pressing Metals
+    m_comment: Item description - MetalPressing1
+  Category: {fileID: 11400000, guid: 30c1f1eabe9eaff4aa05fe46ec864cec, type: 2}
+  Prefabs: []
+  Icon: {fileID: 0}
+  MaxStack: 5
+  HelpPageId: 
+  Stats:
+    m_properties: []

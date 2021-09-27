@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkshopItemId: 2599901862
   DeployDir: melodicalbuild.ProgressionExpansion
-  UploadTimestamp: 1631551322707
+  UploadTimestamp: 1632762019274
   UniqueModId: melodicalbuild.ProgressionExpansion
   Title: Progression Expansion
   Thumbnail: {fileID: 2800000, guid: d250ef848e5888045a3b54de5a7bf7a9, type: 3}
@@ -22,8 +22,8 @@ MonoBehaviour:
   LoadGroup: 0
   LoadOrder: 0
   PersistentDirName: 
-  Version: 0.3
-  ChangeNote: Finished Liquid System
+  Version: 0.4
+  ChangeNote: Added Alloy System
   SkipContentPatches: 0
   DebugBuild: 0
   AssemblyDefinitions:
