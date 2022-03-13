@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7242142922676560480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24eb46c110065c947a6e739468c0d746, type: 3}
+  m_Name: scenes
+  m_EditorClassIdentifier: 
+  AutoLoad: 1
+  Scenes:
+  - {fileID: 102900000, guid: 7a0778109da3a5741bcb5f252a408510, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,24 +29,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WorkshopItemId: 2599901862
   DeployDir: melodicalbuild.ProgressionExpansion
-  UploadTimestamp: 1632762019274
+  UploadTimestamp: 1635265168709
   UniqueModId: melodicalbuild.ProgressionExpansion
   Title: Progression Expansion
   Thumbnail: {fileID: 2800000, guid: d250ef848e5888045a3b54de5a7bf7a9, type: 3}
+  Tags: -1
   MultiplayerMode: 0
   LoadGroup: 0
   LoadOrder: 0
   PersistentDirName: 
-  Version: 0.4
-  ChangeNote: Added Alloy System
+  Version: 0.5.0
+  ChangeNote: Rebuilt the Mod for Volcanoids Version 1.27.271
   SkipContentPatches: 0
-  DebugBuild: 0
+  DebugBuild: 1
   AssemblyDefinitions:
   - {fileID: 5897886265953266890, guid: 0fd3b0eb840715b4a88d78b826abe487, type: 3}
   Assemblies: []
   OtherFiles: []
   Bundles:
   - {fileID: 1310241985708592304}
+  - {fileID: -7242142922676560480}
   Metadata: []
 --- !u!114 &1310241985708592304
 MonoBehaviour:

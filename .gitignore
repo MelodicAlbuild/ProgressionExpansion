@@ -48,3 +48,28 @@ sysinfo.txt
 crashlytics-build.properties
 
 Assets/.revision
+Assets/AdvancedWeaponry
+Assets/AdvancedWeaponry.meta
+Assets/Allegorithmic
+Assets/Allegorithmic.meta
+Assets/Modern Weapons Pack
+Assets/Modern Weapons Pack.meta
+Assets/DeviceModdingScene.unity
+Assets/DeviceModdingScene.unity.meta
+Assets/ModuleModdingScene.unity
+Assets/ModuleModdingScene.unity.meta
+Assets/PlayerArmorCreationScene.unity
+Assets/PlayerArmorCreationScene.unity.meta
+Assets/TurretModdingScene.unity
+Assets/TurretModdingScene.unity.meta
+Assets/WeaponCreationScene.unity
+Assets/WeaponCreationScene.unity.meta
+Assets/Work.unity
+Assets/Work.unity.meta
+Assets/Samples
+Assets/Samples.meta
+Packages/manifest.json
+ProjectSettings
+UserSettings
+Assets/readme.txt
+Assets/readme.txt.meta
