@@ -44,7 +44,8 @@ MonoBehaviour:
   DebugBuild: 1
   AssemblyDefinitions:
   - {fileID: 5897886265953266890, guid: 0fd3b0eb840715b4a88d78b826abe487, type: 3}
-  Assemblies: []
+  Assemblies:
+  - {fileID: -1121539586, guid: 46d0c86c1cdfe014da5896a3352ad55f, type: 3}
   OtherFiles: []
   Bundles:
   - {fileID: 1310241985708592304}

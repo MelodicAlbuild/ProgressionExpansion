@@ -73,3 +73,10 @@ ProjectSettings
 UserSettings
 Assets/readme.txt
 Assets/readme.txt.meta
+
+Assets/NuGet.config
+Assets/NuGet.config.meta
+Assets/NuGet
+Assets/NuGet.meta
+Assets/packages.config
+Assets/packages.config.meta

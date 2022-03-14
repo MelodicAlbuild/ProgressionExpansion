@@ -1,18 +1,16 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using MelodicAlbuild.Version;
+using MelodicAlbuild.Version.Comparitors;
+using MelodicAlbuild.Version.ExtensionTypes;
 
 public class API
 {
-    public static Versions API_VERSION = new Versions("1.0.0");
+    public static MelodicAlbuild.Version.Version API_VERSION = new MelodicAlbuild.Version.Version("1.0.0");
 
-    public static Versions updateVersion = new Versions("0.5.0");
+    public static MelodicAlbuild.Version.Version updateVersion = new MelodicAlbuild.Version.Version("0.5.0");
 
     private bool needUpdate = false;
     private bool supportedAPI = false;
@@ -21,7 +19,7 @@ public class API
 
     public API(string uVersion)
     {
-        updateVersion = new Versions(uVersion);
+        updateVersion = new MelodicAlbuild.Version.Version(uVersion);
 
         APIRequester("http://api.melodicalmake.tech");
         PERequester("http://api.melodicalmake.tech/volcanoids/mods/pe", Base64.EncodeToBase64(pass));
@@ -63,7 +61,7 @@ public class API
             ProgressionExpansion.shortVersion = root.short_version;
             ProgressionExpansion.updateName = root.update_name;
             ProgressionExpansion.version = root.version;
-            if (new Versions(root.version).IsEqual(updateVersion))
+            if (new MelodicAlbuild.Version.Version(root.version).IsEqual(updateVersion))
             {
                 Debug.Log("[Progression Expansion | API]: Mod is Up to Date");
             }
@@ -71,7 +69,7 @@ public class API
             {
                 Debug.Log("[Progression Expansion | API]: Mod is Not up to Date...");
 
-                if (new Versions(root.version).IsGreaterThan(updateVersion))
+                if (new MelodicAlbuild.Version.Version(root.version).IsGreaterThan(updateVersion))
                 {
                     needUpdate = true;
                 }
@@ -93,9 +91,9 @@ public class API
         }
 
         var root = JsonConvert.DeserializeObject<APIClass>(html2);
-        VersionsArray supportedVersions = new VersionsArray(root.supported_versions);
+        VersionArray supportedVersions = new VersionArray(root.supported_versions);
         supportedAPI = supportedVersions.versions.Contains(API_VERSION);
-        if (new Versions(root.version).IsEqual(API_VERSION))
+        if (new MelodicAlbuild.Version.Version(root.version).IsEqual(API_VERSION))
         {
             Debug.Log("[Progression Expansion | API]: API is Up to Date");
         }
