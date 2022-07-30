@@ -1,0 +1,103 @@
+﻿<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Version</name>
+    </assembly>
+    <members>
+        <member name="M:MelodicAlbuild.Version.Comparitors.Equal.IsEqual(MelodicAlbuild.Version.Version,MelodicAlbuild.Version.Version)">
+            <summary>
+            Compares this Version to another Version and Determines if it is equal to the Compared Version.
+            </summary>
+            <param name="version">This Version</param>
+            <param name="comparitiveVersion">The Version Compared To</param>
+            <returns>Returns True if Both Versions are Equal.</returns>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Comparitors.IsGreater.IsGreaterThan(MelodicAlbuild.Version.Version,MelodicAlbuild.Version.Version)">
+            <summary>
+            Compares this Version to another Version and Determines if it is Greater than the Compared Version.
+            </summary>
+            <param name="version">This Version</param>
+            <param name="comparitiveVersion">The Version Compared To</param>
+            <returns>Returns True if This Version is Greater than the Compared Version.</returns>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Comparitors.IsLess.IsLessThan(MelodicAlbuild.Version.Version,MelodicAlbuild.Version.Version)">
+            <summary>
+            Compares this Version to another Version and Determines if it is Less than the Compared Version.
+            </summary>
+            <param name="version">This Version</param>
+            <param name="comparitiveVersion">The Version Compared To</param>
+            <returns>Returns True if This Version is Less than the Compared Version.</returns>
+        </member>
+        <member name="T:MelodicAlbuild.Version.ExtensionTypes.VersionArray">
+            <summary>
+            A Mediator Conversion from String Array to Version Array.
+            </summary>
+        </member>
+        <member name="P:MelodicAlbuild.Version.ExtensionTypes.VersionArray.versions">
+            <summary>
+            A Version Array from Compiled Strings.
+            </summary>
+        </member>
+        <member name="M:MelodicAlbuild.Version.ExtensionTypes.VersionArray.#ctor(System.String[])">
+            <summary>
+            Creates a Default Version based off of the provided String Array.
+            
+            STRINGS MUST BE IN FORMAT (Major.Minor.Patch)
+            </summary>
+            <param name="versionStringArray">Versions to Decode in format (Major.Minor.Patch)</param>
+        </member>
+        <member name="T:MelodicAlbuild.Version.Version">
+            <summary>
+            A Semantic Versioning Class
+            </summary>
+        </member>
+        <member name="P:MelodicAlbuild.Version.Version.Major">
+            <summary>
+            Major Version Number
+            </summary>
+        </member>
+        <member name="P:MelodicAlbuild.Version.Version.Minor">
+            <summary>
+            Minor Version Number
+            </summary>
+        </member>
+        <member name="P:MelodicAlbuild.Version.Version.Patch">
+            <summary>
+            Patch Version Number
+            </summary>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Version.#ctor(System.Int32)">
+            <summary>
+            Creates a Default Version with 1 Variable.
+            
+            Other Numbers Default to 0.
+            </summary>
+            <param name="mj">Major Version Number</param>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Version.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a Default Version with 2 Variables.
+            
+            Other Numbers Default to 0.
+            </summary>
+            <param name="mj">Major Version Number</param>
+            <param name="mi">Minor Version Number</param>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Version.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a Default Version with 3 Variables.
+            </summary>
+            <param name="mj">Major Version Number</param>
+            <param name="mi">Minor Version Number</param>
+            <param name="pt">Patch Version Number</param>
+        </member>
+        <member name="M:MelodicAlbuild.Version.Version.#ctor(System.String)">
+            <summary>
+            Creates a Default Version based off of the provided String.
+            
+            STRING MUST BE IN FORMAT (Major.Minor.Patch)
+            </summary>
+            <param name="versionString">Version to Decode in format (Major.Minor.Patch)</param>
+        </member>
+    </members>
+</doc>

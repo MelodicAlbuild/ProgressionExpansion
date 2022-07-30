@@ -2,7 +2,6 @@
 using System.IO;
 using System.Net;
 using UnityEngine;
-using MelodicAlbuild.Version;
 using MelodicAlbuild.Version.Comparitors;
 using MelodicAlbuild.Version.ExtensionTypes;
 
@@ -20,9 +19,10 @@ public class API
     public API(string uVersion)
     {
         updateVersion = new MelodicAlbuild.Version.Version(uVersion);
+        Debug.Log("[Progression Expansion | API]: " + updateVersion);
 
-        APIRequester("http://api.melodicalmake.tech");
-        PERequester("http://api.melodicalmake.tech/volcanoids/mods/pe", Base64.EncodeToBase64(pass));
+        APIRequester("http://api.melodicalbuild.com");
+        PERequester("http://api.melodicalbuild.com/volcanoids/mods/pe", Base64.EncodeToBase64(pass));
 
         ProgressionExpansion.updateText = UpdateVersioner();
     }
@@ -58,6 +58,7 @@ public class API
                 html1 = reader.ReadToEnd();
             }
             var root = JsonConvert.DeserializeObject<PE>(html1);
+            Debug.Log(root);
             ProgressionExpansion.shortVersion = root.short_version;
             ProgressionExpansion.updateName = root.update_name;
             ProgressionExpansion.version = root.version;
@@ -91,6 +92,7 @@ public class API
         }
 
         var root = JsonConvert.DeserializeObject<APIClass>(html2);
+        Debug.Log(root);
         VersionArray supportedVersions = new VersionArray(root.supported_versions);
         supportedAPI = supportedVersions.versions.Contains(API_VERSION);
         if (new MelodicAlbuild.Version.Version(root.version).IsEqual(API_VERSION))

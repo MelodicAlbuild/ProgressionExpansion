@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using JetBrains.Annotations;
 using System.Text;
@@ -17,31 +18,41 @@ public static class CheckRecipeInputsPatch1 {
 
         // An additional check for liquids.
         if (recipe is LiquidRecipe liquidRecipe) {
-            foreach (var liquid in liquidRecipe.Liquids) {
-                FluidSystem.LiquidStorageManagerRef.GetLiquidValue(liquid.Item.Category);
+            foreach (var liquid in liquidRecipe.Liquids)
+            {
+                LiquidRecipe r = liquidRecipe;
+                if (r.Liquids.First(o => o.Item == liquid.Item).Amount >=
+                    FluidSystem.LiquidStorageManagerRef.GetLiquidValue(liquid.Item.Category))
+                {
+                    return true;
+                }
+
+                return false;
             }
-            return true;
         }
 
         // An additional check for molten.
-        else if (recipe is MoltenRecipe moltenRecipe)
+        if (recipe is MoltenRecipe moltenRecipe)
         {
             foreach (var molten in moltenRecipe.Moltens)
             {
-                MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(molten.Item.Category);
+                MoltenRecipe r = moltenRecipe;
+                if (r.Moltens.First(o => o.Item == molten.Item).Amount >=
+                    MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(molten.Item.Category))
+                {
+                    return true;
+                }
+
+                return false;
             }
-            return true;
         }
 
-        else
+        foreach (var item in recipe.Inputs)
         {
-            foreach (var item in recipe.Inputs)
-            {
-                var missingAmount = item.Amount - producer.GetLoadedAmount(item.Item, item.Stats);
-                if (missingAmount > 0 && cargo.GetAmount(item.Item, item.Stats, item.Amount) < missingAmount) return false;
-            }
-            return true;
+            var missingAmount = item.Amount - producer.GetLoadedAmount(item.Item, item.Stats);
+            if (missingAmount > 0 && cargo.GetAmount(item.Item, item.Stats, item.Amount) < missingAmount) return false;
         }
+        return false;
     }
 
     /**
@@ -72,7 +83,7 @@ public static class CheckRecipeInputsPatch2 {
         if (producer.ActiveRecipe is LiquidRecipe)
         {
             if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
-                                 && (producer.ActiveRecipe is LiquidRecipe liquidRecipe && FluidSystem.LiquidStorageManagerRef.RemoveLiquidBatch(liquidRecipe.Liquids) || true))
+                                 && (producer.ActiveRecipe is LiquidRecipe liquidRecipe && FluidSystem.LiquidStorageManagerRef.RemoveLiquidBatch(liquidRecipe.Liquids)))
             {
                 loadedInputs = producer.ActiveRecipe;
                 return true;
@@ -97,14 +108,6 @@ public static class CheckRecipeInputsPatch2 {
                         return true;
                     }
                     break;
-                case MoltenType.ItemAlloying:
-                    if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
-                                 && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens) || true))
-                    {
-                        loadedInputs = producer.ActiveRecipe;
-                        return true;
-                    }
-                    break;
                 case MoltenType.Pressing:
                     if (loadedInputs == null && MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens))
                     {
@@ -112,9 +115,10 @@ public static class CheckRecipeInputsPatch2 {
                         return true;
                     }
                     break;
+                case MoltenType.ItemAlloying:
                 case MoltenType.Default:
                     if (loadedInputs == null && source.RemoveBatch(producer.gameObject, producer.ActiveRecipe.UniqueInputs)
-                                 && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens) || true))
+                                             && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens)))
                     {
                         loadedInputs = producer.ActiveRecipe;
                         return true;
@@ -168,6 +172,7 @@ public static class ShowHaveCountPatch
                 }
                 result.Text.ConcatFormat(___m_texts.InputFormat.Text, obj.Amount, obj.Item.Name, null);
                 result.Text.ConcatFormat(___m_texts.InputAvailableFormat, FluidSystem.LiquidStorageManagerRef.GetLiquidValue(obj.Item.Category));
+                result.Text.AppendLine();
             }
             result.Text.AppendLine();
         } else if (recipe is MoltenRecipe moltenRecipe)
@@ -185,6 +190,7 @@ public static class ShowHaveCountPatch
                 }
                 result.Text.ConcatFormat(___m_texts.InputFormat.Text, obj.Amount, obj.Item.Name, null);
                 result.Text.ConcatFormat(___m_texts.InputAvailableFormat, MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category));
+                result.Text.AppendLine();
             }
             result.Text.AppendLine();
         }

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: ThermalStorageT3
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 2210387014
+    Value1: 1335331484
+    Value2: 4275587509
+    Value3: 2973960574
+  Inputs:
+  - Item: {fileID: 11400000, guid: f878209ee44486c4faaf53d535e39ffc, type: 2}
+    Amount: 50
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 53a8f946b466b9e4d90b2544569ba062, type: 2}
+    Amount: 15
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: b3a0b7be95f2ec146a98f25dd98e7f98, type: 2}
+    Amount: 30
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 88c8a83ce08595e45a0f6f7494232e4f, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 21300000, guid: 38303a4ebc578eb4590b858aa6e0d682, type: 3}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 3734a3dd50fd41e41a15c7897b1e47eb, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 0ab62bbf78086bc42be0e21b0b0a6f67, type: 2}
+  ProductionTime: 160

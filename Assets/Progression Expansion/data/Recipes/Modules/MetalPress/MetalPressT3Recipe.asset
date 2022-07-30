@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: MetalPressT3Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 314033122
+    Value1: 1316658842
+    Value2: 4191076025
+    Value3: 22442043
+  Inputs:
+  - Item: {fileID: 11400000, guid: 0a8b51a9156eae54e878be499375a5fc, type: 2}
+    Amount: 9
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 6e70a4d3a89260142b19a0834f767565, type: 2}
+    Amount: 9
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: fcf67ebb367355c4795c56c0953b2017, type: 2}
+    Amount: 2
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: de49e8a2a5685b34e9cbd556749296f8, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: ce4da15226d4b4649a2047d48e66d135, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 327cd2fff4fe89047829617583b96fff, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 46d1d98e93bd44a48a55c9cf5337ee5d, type: 2}
+    Amount: 5
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 57e11448a65be264a901843f923e07a7, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 21300000, guid: 33b61c6c47505aa428454b47216388a7, type: 3}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: 02739ba032e7b1f4b9fb0e2866b68f0d, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: 0ab62bbf78086bc42be0e21b0b0a6f67, type: 2}
+  ProductionTime: 160

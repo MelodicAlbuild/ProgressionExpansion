@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad48868c50a58b43b6914a2b2a83097, type: 3}
+  m_Name: MelterT2Recipe
+  m_EditorClassIdentifier: 
+  m_assetId:
+    Value0: 3010227163
+    Value1: 1124120742
+    Value2: 3661941381
+    Value3: 4243128508
+  Inputs:
+  - Item: {fileID: 11400000, guid: d84b62f00950c484b89a176bb39bb7e7, type: 2}
+    Amount: 6
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 4988cf63761842d4a92fb26bd880ed01, type: 2}
+    Amount: 6
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: 71da14bcfb171a44d9aabdeb79674527, type: 2}
+    Amount: 2
+    Stats:
+      m_set:
+        m_properties: []
+  - Item: {fileID: 11400000, guid: d65ca4042608a104d87d9cfdde660ffc, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Output:
+    Item: {fileID: 11400000, guid: 88860a487863a0e41b31415994a4778a, type: 2}
+    Amount: 1
+    Stats:
+      m_set:
+        m_properties: []
+  Icon: {fileID: 21300000, guid: 1af275d2f03db7947a23dccfe1d92582, type: 3}
+  Order: 0
+  RequiredUpgrades:
+  - {fileID: 11400000, guid: fb88d42ac3f8a7b48a974b5c86cc3864, type: 2}
+  Categories:
+  - {fileID: 11400000, guid: bc2d5ea0f0f2c7d45bd402ab6b6b2ebb, type: 2}
+  ProductionTime: 80

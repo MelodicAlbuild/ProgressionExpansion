@@ -28,9 +28,9 @@ MonoBehaviour:
   m_Name: Progression Expansion
   m_EditorClassIdentifier: 
   WorkshopItemId: 2599901862
-  DeployDir: melodicalbuild.ProgressionExpansion
+  DeployDir: MelodicAlbuild.ProgressionExpansion
   UploadTimestamp: 1635265168709
-  UniqueModId: melodicalbuild.ProgressionExpansion
+  UniqueModId: MelodicAlbuild.ProgressionExpansion
   Title: Progression Expansion
   Thumbnail: {fileID: 2800000, guid: d250ef848e5888045a3b54de5a7bf7a9, type: 3}
   Tags: -1
@@ -44,8 +44,7 @@ MonoBehaviour:
   DebugBuild: 1
   AssemblyDefinitions:
   - {fileID: 5897886265953266890, guid: 0fd3b0eb840715b4a88d78b826abe487, type: 3}
-  Assemblies:
-  - {fileID: -1121539586, guid: 46d0c86c1cdfe014da5896a3352ad55f, type: 3}
+  Assemblies: []
   OtherFiles: []
   Bundles:
   - {fileID: 1310241985708592304}

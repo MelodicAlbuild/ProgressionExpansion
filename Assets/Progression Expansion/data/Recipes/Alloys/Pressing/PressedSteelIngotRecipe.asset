@@ -29,7 +29,7 @@ MonoBehaviour:
   RequiredUpgrades:
   - {fileID: 11400000, guid: d04b320d4cfa5bf46be14e4cdd43b157, type: 2}
   Categories:
-  - {fileID: 11400000, guid: 0782a888973a94b4dafdfb2426f0085c, type: 2}
+  - {fileID: 11400000, guid: 18e3f1d92ebdeef44bcfa9c328661328, type: 2}
   ProductionTime: 10
   Moltens:
   - Item: {fileID: 11400000, guid: 61ecbae2a26edba4aa7536596a13241e, type: 2}

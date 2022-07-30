@@ -34,7 +34,7 @@ MonoBehaviour:
     Stats:
       m_set:
         m_properties: []
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 4d6889d50f283f248954d28a833f5ae1, type: 3}
   Order: 0
   RequiredUpgrades:
   - {fileID: 11400000, guid: 2bd7b88db440ddf40b2032fc3843579b, type: 2}

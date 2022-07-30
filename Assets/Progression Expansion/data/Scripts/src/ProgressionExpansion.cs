@@ -14,6 +14,9 @@ public class ProgressionExpansion : GameMod
     private static FieldInfo mIslandQuestsField;
     private static QuestManager mIslandQuestManager;
 
+    private Scene newScene;
+    private bool questsLoaded = false;
+
     public string updateVersion;
 
     public static string shortVersion = "0.0";
@@ -23,8 +26,10 @@ public class ProgressionExpansion : GameMod
     public override void Load()
     {
         base.Load();
+        SceneManager.sceneLoaded += OnSceneLoaded;
 
-        updateVersion = Owner.Version.ToString();
+        updateVersion = Owner.Manifest.Version;
+        Debug.Log("[Progression Expansion | Load]: " + Owner.Manifest.Version);
 
         var log = new StringWriter();
         var modName = nameof(ProgressionExpansion);
@@ -47,8 +52,10 @@ public class ProgressionExpansion : GameMod
 
     public override void OnGameLoading(Scene gameScene, AsyncOperation gameSceneLoadOperation)
     {
-        var newScene = EditorUtils.LoadScene("QuestAdditions", new LoadSceneParameters(LoadSceneMode.Additive));
-        Debug.LogWarning($"Additive scene loaded {newScene.name}, isLoaded = {newScene.isLoaded}");
+        if (!newScene.isLoaded)
+        {
+            SceneManager.LoadScene("QuestAdditions", LoadSceneMode.Additive);
+        }
     }
 
     public override void OnMainMenuLoaded(Scene mainMenuScene)
@@ -62,9 +69,61 @@ public class ProgressionExpansion : GameMod
     public override void OnGameLoaded(Scene gameScene)
     {
         base.OnGameLoaded(gameScene);
+
+        foreach (var obj in SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            if (obj.name == "Gameplay")
+            {
+                foreach (var gObj in obj.GetChildren())
+                {
+                    if (gObj.name == "IslandGameplay")
+                    {
+                        mIslandQuestManager = gObj.gameObject.GetComponent<QuestManager>();
+                    }
+                }
+            }
+        }
+
         new DepositSystem().InitDeposits();
 
-        Tests();
+        //Tests();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.LogWarning($"Additive scene loaded {scene.name}, isLoaded = {scene.isLoaded}");
+
+        if (scene.name == "QuestAdditions" && !questsLoaded)
+        {
+            if (mIslandQuestManager != null)
+            {
+                mIslandQuestsField = mIslandQuestManager.GetType().GetField("m_quests", BindingFlags.NonPublic | BindingFlags.Instance);
+                mIslandQuestManager.Store();
+
+                newScene = scene;
+
+                foreach (var obj in newScene.GetRootGameObjects())
+                {
+                    Debug.Log("[Progression Expansion | Game Loading [Quests]]: Root Object: " + obj.name);
+                    foreach (var qObj in obj.GetComponentsInChildren<Quest>())
+                    {
+                        Debug.Log("[Progression Expansion | Game Loading [Quests]]: Adding Quest: " + qObj);
+                        mIslandQuestManager.AddNewQuest(qObj);
+                        mIslandQuestManager.Store();
+                    }
+                }
+
+                foreach (var quest in (Quest[])mIslandQuestsField.GetValue(mIslandQuestManager))
+                {
+                    Debug.Log("[Progression Expansion | Game Loading]: [mIslandQuestManager.Quests] | " + quest);
+                }
+                questsLoaded = true;
+            }
+            else
+            {
+                Debug.Log("[Progression Expansion | Game Loading]: [mIslandQuestManager] set equal to null.");
+            }
+        }
     }
 
     private void Tests()
@@ -107,7 +166,7 @@ public class ProgressionExpansion : GameMod
             }
             Debug.Log(" ");
             lamArray = (Quest[])mIslandQuestsField.GetValue(mIslandQuestManager);
-            foreach (var quest in lamArray)
+            foreach (var quest in (Quest[])mIslandQuestsField.GetValue(mIslandQuestManager))
             {
                 Debug.Log("[Progression Expansion | Questing]: [mIslandQuestManager.Quests] | " + quest);
             }
