@@ -135,7 +135,7 @@ public class LiquidStorage : MonoBehaviour
         }
     }
 
-    public bool Remove(ref float amount, ref ItemCategory category)
+    public bool Remove(ref float amount, ItemCategory category)
     {
         if (m_CurrentTotalStorage >= amount)
         {
@@ -169,7 +169,7 @@ public class LiquidStorage : MonoBehaviour
         }
     }
 
-    public bool Remove(ref int amount, ref ItemCategory category)
+    public bool Remove(ref int amount, ItemCategory category)
     {
         if (m_CurrentTotalStorage >= amount)
         {

@@ -116,7 +116,7 @@ public class LiquidStorageManager : MonoBehaviour
         var storagesForTargetLiquid = m_storages;
         foreach (var storage in storagesForTargetLiquid)
         {
-            if (storage.Remove(ref amount, ref category))
+            if (storage.Remove(ref amount, category))
                 return true;
             break;
         }
@@ -126,8 +126,9 @@ public class LiquidStorageManager : MonoBehaviour
     public bool RemoveLiquidBatch(InventoryItem[] liquids) {
         for (var i = 0; i < liquids.Length; i++) {
             var storagesForTargetLiquid = m_storages;
+            var amountToRemove = liquids[i].Amount;
             foreach (var storage in storagesForTargetLiquid) {
-                if (!storage.Remove(ref liquids[i].Amount, ref liquids[i].Item.Category)) return false;
+                if (!storage.Remove(ref amountToRemove, liquids[i].Item.Category)) return false;
                 break;
             }
         }

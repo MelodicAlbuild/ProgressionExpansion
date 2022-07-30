@@ -135,7 +135,7 @@ public class MoltenStorage : MonoBehaviour
         }
     }
 
-    public bool Remove(ref float amount, ref ItemCategory category)
+    public bool Remove(ref float amount, ItemCategory category)
     {
         if (m_CurrentTotalStorage >= amount)
         {
@@ -169,17 +169,35 @@ public class MoltenStorage : MonoBehaviour
         }
     }
 
-    public bool Remove(ref int amount, ref ItemCategory category)
+    public bool Remove(ref int amount, ItemCategory category)
     {
         if (m_CurrentTotalStorage >= amount)
         {
+            if (!storageSystem.ContainsKey(category))
+            {
+                storageSystem.Add(category, 0f);
+                return false;
+            }
+            else
+            {
+                storageSystem[category] -= amount;
+            }
             m_CurrentTotalStorage -= amount;
             amount = 0;
             return true;
         }
         else
         {
-            amount           = (int) (amount - m_CurrentTotalStorage);
+            if (!storageSystem.ContainsKey(category))
+            {
+                storageSystem.Add(category, 0f);
+                return false;
+            }
+            else
+            {
+                storageSystem[category] = 0;
+            }
+            amount -= (int)m_CurrentTotalStorage;
             m_CurrentTotalStorage = 0f;
             return false;
         }

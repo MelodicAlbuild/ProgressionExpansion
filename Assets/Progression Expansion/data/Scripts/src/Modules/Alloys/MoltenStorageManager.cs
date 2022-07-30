@@ -140,7 +140,7 @@ public class MoltenStorageManager : MonoBehaviour
         var storagesForTargetLiquid = m_storages;
         foreach (var storage in storagesForTargetLiquid)
         {
-            if (storage.Remove(ref amount, ref category))
+            if (storage.Remove(ref amount, category))
                 return true;
             break;
         }
@@ -150,8 +150,9 @@ public class MoltenStorageManager : MonoBehaviour
     public bool RemoveMoltenBatch(InventoryItem[] moltenObjects) {
         for (var i = 0; i < moltenObjects.Length; i++) {
             var storagesForTargetLiquid = m_storages;
+            var amountToRemove = moltenObjects[i].Amount;
             foreach (var storage in storagesForTargetLiquid) {
-                if (!storage.Remove(ref moltenObjects[i].Amount, ref moltenObjects[i].Item.Category)) return false;
+                if (!storage.Remove(ref amountToRemove, moltenObjects[i].Item.Category)) return false;
                 break;
             }
         }

@@ -51,6 +51,7 @@ public static class CheckRecipeInputsPatch1 {
         {
             var missingAmount = item.Amount - producer.GetLoadedAmount(item.Item, item.Stats);
             if (missingAmount > 0 && cargo.GetAmount(item.Item, item.Stats, item.Amount) < missingAmount) return false;
+            return true;
         }
         return false;
     }
@@ -86,6 +87,10 @@ public static class CheckRecipeInputsPatch2 {
                                  && (producer.ActiveRecipe is LiquidRecipe liquidRecipe && FluidSystem.LiquidStorageManagerRef.RemoveLiquidBatch(liquidRecipe.Liquids)))
             {
                 loadedInputs = producer.ActiveRecipe;
+                foreach (var obj in liquidRecipe.Liquids)
+                {
+                    Debug.Log("Removing " + obj.Amount + " " + obj.Item.Name + " Leaving " + FluidSystem.LiquidStorageManagerRef.GetLiquidValue(obj.Item.Category));
+                }
                 return true;
             }
         }
@@ -102,9 +107,17 @@ public static class CheckRecipeInputsPatch2 {
                     }
                     break;
                 case MoltenType.Alloying:
+                    foreach (var obj in moltenRecipe.Moltens)
+                    {
+                        Debug.Log("Required Item Type: " + obj.Item.Name + " | Required Item Amount: " + obj.Amount);
+                    }
                     if(loadedInputs == null && MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens))
                     {
                         loadedInputs = producer.ActiveRecipe;
+                        foreach (var obj in moltenRecipe.Moltens)
+                        {
+                            Debug.Log("Removing " + obj.Amount + " " + obj.Item.Name + " Leaving " + MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category));
+                        }
                         return true;
                     }
                     break;
@@ -112,6 +125,10 @@ public static class CheckRecipeInputsPatch2 {
                     if (loadedInputs == null && MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens))
                     {
                         loadedInputs = producer.ActiveRecipe;
+                        foreach (var obj in moltenRecipe.Moltens)
+                        {
+                            Debug.Log("Removing " + obj.Amount + " " + obj.Item.Name + " Leaving " + MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category));
+                        }
                         return true;
                     }
                     break;
@@ -121,6 +138,10 @@ public static class CheckRecipeInputsPatch2 {
                                              && (MoltenSystem.MoltenStorageManagerRef.RemoveMoltenBatch(moltenRecipe.Moltens)))
                     {
                         loadedInputs = producer.ActiveRecipe;
+                        foreach (var obj in moltenRecipe.Moltens)
+                        {
+                            Debug.Log("Removing " + obj.Amount + " " + obj.Item.Name + " Leaving " + MoltenSystem.MoltenStorageManagerRef.GetMoltenValue(obj.Item.Category));
+                        }
                         return true;
                     }
                     break;
