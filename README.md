@@ -1,5 +1,6 @@
 # Progression Expansion
-## A Complete Overhaul of the Volcanoids progression system. Currently the Tech Tree is only slightly there and it doesn't really expand as far as it could, I aim to remedy that.
+
+A Complete Overhaul of the Volcanoids progression system. Currently the Tech Tree is only slightly there and it doesn't really expand as far as it could, I aim to remedy that.
 
 ## Major Features:
 - Molten Metals
