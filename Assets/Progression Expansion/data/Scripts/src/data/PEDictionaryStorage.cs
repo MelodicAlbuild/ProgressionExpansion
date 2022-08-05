@@ -10,5 +10,10 @@ namespace Progression_Expansion.data.Scripts.src.data
         {
             questDictionary = dict;
         }
+
+        public static Dictionary<QuestRuntime, Quest> GetQuestDictionary()
+        {
+            return questDictionary;
+        }
     }
 }

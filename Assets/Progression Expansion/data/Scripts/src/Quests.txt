@@ -1,0 +1,38 @@
+﻿Key: 
+*: Needs Altered/Is Altered
+?: May or may not be needed
+
+Zone 1
+--------------------
+Q04_RepairModule | Q01_RepairModule
+Q03_RepairDrillship | Q02_RepairDrillship
+Q13_Turret | Q03_Turret
+Q97_GoGetCoal | Q04_GoGetCoal
+PE01_GoGetCopper
+Q08_RaidCog1_Intel | Q05_RaidCog1_Intel
+Q86_ResearchWorktable | Q06_ResearchWorktable
+Q68_ProductionResearch | Q07_ProductionResearch
+PE02_Melting101
+PE03_Pressing101
+PE04_Alloying101
+Q91_GetEquipment | Q08_GetEquipment (*)
+Q80_HandComputerRadio | Q09_HandComputerRadio
+Q82_HandComputerDrillshipLever | Q10_HandComputerDrillshipLever
+PE05_Bronze
+Q70_ExplosivesSchematics | Q11_ExplosivesSchematics
+Q87_DestroyDrill | Q12_DestroyDrill
+Q12_Module-BasedProduction | Q13_ModuleBasedProduction (*)
+Q92_ResearchModule | Q14_ResearchModule
+Q09_SecondSegment | Q15_SecondSegment
+Q10_SecondStorage | Q16_SecondStorage
+Q72_RefineryT1Module | Q17_RefineryT1Module (*?)
+Q14_PrepareForAttack | Q18_PrepareForAttack (*)
+Q23_DestroyCogDrillshipT2 | Q19_DestroyCogDrillshipT2 (*)
+Q25_DrillT2Upgrade | Q20_DrillT2Upgrade (*)
+Q19_CaveAttack | Q21_CaveAttack
+Q26_TravelToArea2 | Q22_TravelToArea2
+--------------------
+
+Zone 2
+--------------------
+TODO: This

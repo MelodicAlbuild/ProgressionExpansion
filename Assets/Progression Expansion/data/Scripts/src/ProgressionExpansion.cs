@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using HarmonyLib;
+using Progression_Expansion.data.Extras;
+using Progression_Expansion.data.Scripts.src.data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +15,7 @@ public class ProgressionExpansion : GameMod
     private static FieldInfo mQuestsField;
     private static FieldInfo mIslandQuestsField;
     private static QuestManager mIslandQuestManager;
+    private static QuestLine mIslandQuestLine;
 
     private Scene newScene;
     private bool questsLoaded = false;
@@ -30,6 +33,7 @@ public class ProgressionExpansion : GameMod
 
         updateVersion = Owner.Manifest.Version;
         Debug.Log("[Progression Expansion | Load]: " + Owner.Manifest.Version);
+        new API(updateVersion);
 
         var log = new StringWriter();
         var modName = nameof(ProgressionExpansion);
@@ -61,7 +65,6 @@ public class ProgressionExpansion : GameMod
     public override void OnMainMenuLoaded(Scene mainMenuScene)
     {
         base.OnMainMenuLoaded(mainMenuScene);
-        new API(updateVersion);
         GameObject.Find("EarlyAccess").gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Progression Expansion\n " + shortVersion;
         GameObject.Find("Version").gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = "Expansion Version: " + version + " | (" + updateName + ") " + updateText;
     }
@@ -80,6 +83,11 @@ public class ProgressionExpansion : GameMod
                     {
                         mIslandQuestManager = gObj.gameObject.GetComponent<QuestManager>();
                     }
+
+                    if (gObj.name == "Quests")
+                    {
+                        mIslandQuestLine = gObj.gameObject.GetComponentInChildren<QuestLine>();
+                    }
                 }
             }
         }
@@ -95,28 +103,68 @@ public class ProgressionExpansion : GameMod
 
         if (scene.name == "QuestAdditions" && !questsLoaded)
         {
-            if (mIslandQuestManager != null)
+            newScene = scene;
+            if (mIslandQuestManager != null && mIslandQuestLine != null)
             {
                 mIslandQuestsField = mIslandQuestManager.GetType().GetField("m_quests", BindingFlags.NonPublic | BindingFlags.Instance);
                 mIslandQuestManager.Store();
 
-                newScene = scene;
+                GameObject[] rootObjects = newScene.GetRootGameObjects();
+                QuestLine line = rootObjects.First(o => o.name == "Line").GetComponent<QuestLine>();
+                GameObject additions = rootObjects.First(o => o.name == "QuestAdditions");
+                GameObject baseGameAlterations = additions.GetComponentsInChildren<Assignee>().First(o => o.gameObject.name == "BaseGame").gameObject;
+                GameObject peGameAlterations = additions.GetComponentsInChildren<Assignee>().First(o => o.gameObject.name == "ProgressionExpansion").gameObject;
 
-                foreach (var obj in newScene.GetRootGameObjects())
+                List<string> exceptionList = new List<string>()
                 {
-                    Debug.Log("[Progression Expansion | Game Loading [Quests]]: Root Object: " + obj.name);
-                    foreach (var qObj in obj.GetComponentsInChildren<Quest>())
-                    {
-                        Debug.Log("[Progression Expansion | Game Loading [Quests]]: Adding Quest: " + qObj);
-                        mIslandQuestManager.AddNewQuest(qObj);
-                        mIslandQuestManager.Store();
-                    }
+                    "Q01_CraftCore",
+                    "Q02_ClaimDrillship",
+                    "Q08_RaidCog1_Intel",
+                    "Q87_DestroyDrill",
+                    "Q23_DestroyCogDrillshipT2",
+                    "Q19_CaveAttack",
+                    "Q26_TravelToArea2"
+                };
+                List<int> exceptionIndex = new List<int>()
+                {
+                    5, 16, 23, 25, 26
+                };
+                
+                mIslandQuestManager.ClearQuests(exceptionList.ToArray());
+                Debug.Log(" ");
+                foreach (Quest q in baseGameAlterations.GetComponentsInChildren<Quest>())
+                {
+                    Debug.Log("[Progression Expansion | Game Loading]: Adding Base Game Quest " + q.Name + " to Island Quest Manager");
+                    mIslandQuestManager.AddNewQuest(q);
+                }
+                foreach (Quest q in peGameAlterations.GetComponentsInChildren<Quest>())
+                {
+                    Debug.Log("[Progression Expansion | Game Loading]: Adding Progression Expansion Quest " + q.Name + " to Island Quest Manager");
+                    mIslandQuestManager.AddNewQuest(q);
+                }
+                
+                mIslandQuestManager.Store();
+                List<Quest> questList = new List<Quest>();
+
+                foreach (var obj in (mIslandQuestsField.GetValue(mIslandQuestManager) as Quest[]))
+                {
+                    questList.Add(obj);
+                    Debug.Log("Dictionary Conversion: Quest Added to List Enable - " + obj.name);
                 }
 
-                foreach (var quest in (Quest[])mIslandQuestsField.GetValue(mIslandQuestManager))
+                for (int j = 0; j < exceptionList.Count - 2; j++)
                 {
-                    Debug.Log("[Progression Expansion | Game Loading]: [mIslandQuestManager.Quests] | " + quest);
+                    Quest q = questList.Find(o => o.name == exceptionList[j + 2]);
+                    line.Insert(exceptionIndex[j], q);
+                    Debug.Log("[Progression Expansion | Game Loading]: Adding Excluded Quest " + q.Name + " to Island Quest Line");
                 }
+
+                foreach (Quest quest in line.Quests)
+                {
+                    Debug.Log("[Progression Expansion | Game Loading]: [mIslandQuestLine.Quests] | " + quest);
+                }
+
+                mIslandQuestLine.SetQuests(line.Quests.ToList());
                 questsLoaded = true;
             }
             else
