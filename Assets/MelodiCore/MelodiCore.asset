@@ -28,7 +28,7 @@ MonoBehaviour:
   SkipContentPatches: 0
   DebugBuild: 0
   AssemblyDefinitions:
-  - {fileID: 5897886265953266890, guid: c44d9745da5cb1a48b8016c77e533df4, type: 3}
+  - {fileID: 5897886265953266890, guid: 57a55d9bed7f4045950b0a9c8fba02ca, type: 3}
   Assemblies: []
   OtherFiles: []
   Bundles:
